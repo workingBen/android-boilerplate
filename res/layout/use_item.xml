@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/BoilerplateCanvas">
+    <LinearLayout 
+    	style="@style/InfoBar"
+    	android:id="@+id/info_bar">
+       	<TextView 
+   			style="@style/TextViewFontLarge"
+   			android:id="@+id/results_textview"
+   			android:text="@string/enter_code"/>
+    </LinearLayout>
+	<EditText  
+		style="@style/EditTextInputFont"
+		android:id="@+id/item_input"
+	    android:text="#"
+		android:layout_below="@id/info_bar"/>
+   	<TableLayout 
+   		style="@style/CustomKeyboard">
+   		<TableRow style="@style/KeyboardRow">
+   			<Button style="@style/Key"
+   				android:id="@+id/key1"
+   				android:text="1"/>
+   			<Button style="@style/Key"
+   				android:id="@+id/key2"
+   				android:text="2"/>		
+   			<Button style="@style/Key"
+   				android:id="@+id/key3"
+   				android:text="3"/>		
+   		</TableRow>		
+   		<TableRow style="@style/KeyboardRow">
+   			<Button style="@style/Key"
+   				android:id="@+id/key4"
+   				android:text="4"/>		
+   			<Button style="@style/Key"
+   				android:id="@+id/key5"
+   				android:text="5"/>		
+   			<Button style="@style/Key"
+   				android:id="@+id/key6"
+   				android:text="6"/>		
+   		</TableRow>		
+   		<TableRow style="@style/KeyboardRow">
+   			<Button style="@style/Key"
+   				android:id="@+id/key7"
+   				android:text="7"/>		
+   			<Button style="@style/Key"
+   				android:id="@+id/key8"
+   				android:text="8"/>		
+   			<Button style="@style/Key"
+   				android:id="@+id/key9"
+   				android:text="9"/>		
+   		</TableRow>		
+   		<TableRow style="@style/KeyboardRow">
+   			<ImageButton style="@style/Key"
+   				android:id="@+id/keyDel"
+   				android:src="@drawable/input_delete"/>
+   			<Button style="@style/Key"
+   				android:id="@+id/key0"
+   				android:text="0"/>		
+   			<Button style="@style/Key"
+   				android:id="@+id/keyEnter"
+   				android:text="Enter"/>			
+   		</TableRow>		
+   	</TableLayout>
+</RelativeLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/BoilerplateCanvas">
+    <EditText 
+    	style="@style/DoubleTextboxTop"
+    	android:id="@+id/username"
+    	android:hint="Username"
+    	android:layout_alignParentTop="true"
+    	android:background="@drawable/double_input_top"/>
+    <EditText 
+    	style="@style/DoubleTextboxBottom"
+    	android:password="true"
+    	android:id="@+id/password"
+    	android:hint="Password"
+    	android:layout_below="@id/username"
+    	android:background="@drawable/double_input_btm"/>
+	<Button
+		style="@style/StandardButton"
+		android:id="@+id/sign_in_btn"
+		android:background="@drawable/signin_btn_selector"
+		android:text="@string/sign_in"
+		android:layout_below="@id/password"/>
+</RelativeLayout>

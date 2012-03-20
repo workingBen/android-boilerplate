@@ -1,5 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, SplashActivity!</string>
-    <string name="app_name">Android-boilerplate</string>
+  <!-- APP STRING -->
+    <string name="app_name">Boilerplate</string>
+    <string name="loading">Loading...</string>
+  <!-- REDEMPTION -->
+    <string name="redeem_info_text_view">Enter the code shown on the SMS or printout.</string> 
+    <string name="input_max">ID Should Be 5 Digits</string>
+    <string name="input_min">ID Should Be 5 Digits</string>
+    <string name="redeem_success">%1$s is Now Used</string>
+    <string name="enter_code">Enter Code</string>
+  <!-- SIGN IN -->
+    <string name="sign_in">Sign In</string>
+    <string name="error_enter_uname_and_pass">Please Enter a Valid Username and Password.</string>
+  <!-- MENU ITEMS -->
+    <string name="item_logout">Sign Out</string>
+    <string name="item_history">History</string>
+    <string name="item_sync">Sync Codes</string>
+  <!-- TITLES -->
+    <string name="title_history">Redemption History</string>
+    <string name="subtitle_history">Showing %1$d of %2$d Used</string>
+  <!-- COMMANDS -->
+    <string name="cmd_undo"><u>Unuse</u></string>
+    <string name="cmd_sync_now">Sync Now</string>
+    <string name="cmd_dont_logout">Dont Logout</string>
+  <!-- ERRORS -->
+    <string name="error_item_not_found">%1$s Not Found</string>
+    <string name="error_item_already_redeemed">%1$s Already Used</string>
+    <string name="error_must_sync_before_logout">Oops! Please Sync Items before logging out. Thank you!</string>
+    <string name="error_problem_syncing_completely">Sync Error: There was a problem with syncing items.  Please try again or call 877-555-1234.</string>
+    <string name="error_sync_up">Sync Error: There might be an issue with your internet connection. Please try again. If the problem persists, please call 877-555-1234.</string>
+    <string name="error_network">Network Error: There is proably a network connection issue. Please connect and discount your network. If you have further issues call 877-555-1234.</string>
+    <string name="error_logout">There was a problem logging out. Please try again later.</string>
+  <!-- API EXCEPTIONS -->
+    <string name="api_exception_title">ERROR</string>
+    <string name="api_exception_invalid_sign_in">Hmm, We Couldn’t Find that Username and Password. Please try again.</string>
+    <string name="api_exception_deal_unavailable">No Deals Are Associated With Your Account. Please call 877-555-1234 if this is an error</string> 
+    <string name="api_exception_token_invalid">Sorry, Your Session Expired. Please Sign In Again.</string> 
+  <!-- DIALOGS -->
+    <string name="dialog_sync_up"> Now Syncing Items: This may take a few minutes. Please Wait...</string>
+    <string name="dialog_sync_down"> Now Syncing Items: This may take a few minutes. Please Wait...</string>
+    <string name="dialog_sign_in">Now Signing In. Please Wait...</string>
+    <string name="dialog_check_force_upgrade">Please Wait... Checking for Updates.</string>
+    <string name="dialog_confirm_undo">Mark %1$s Unused?</string>
 </resources>
+
+  

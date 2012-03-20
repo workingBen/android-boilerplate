@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    >
-<TextView  
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="@string/hello"
-    />
-</LinearLayout>
+    android:id="@+id/splash_top_view"
+    android:background="@drawable/radial_bg">
+    <ImageView
+    	style="@style/SplashLogo"
+    	android:src="@drawable/logo"
+    	android:id="@+id/logo"/>
+    <ImageView
+		style="@style/SplashText"
+    	android:id="@+id/title"
+    	android:layout_below="@id/logo"
+    	android:src="@drawable/title"/>
+    <ImageView
+		style="@style/SplashStripeText"
+    	android:layout_below="@id/title"
+    	android:background="@color/splash_stripe"
+    	android:src="@drawable/subtitle"/>
+    <TextView 
+    	android:id="@+id/version"
+    	style="@style/SplashVersionText"/>
+</RelativeLayout>
+

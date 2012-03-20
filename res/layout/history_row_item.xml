@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	style="@style/HistoryRow"
+	android:orientation="horizontal"
+	android:background="@color/list_item_bg">
+	<RelativeLayout
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent">
+		<LinearLayout
+			style="@style/HistoryRow"
+			android:gravity="center_vertical"
+			android:orientation="vertical">
+		<TextView
+			style="@style/TextViewAccessNumber"
+			android:id="@+id/content"/>
+		<TextView
+			style="@style/TextViewUsedAt"
+			android:id="@+id/used_at"/>
+		</LinearLayout>
+		<LinearLayout
+			style="@style/UndoContainer"
+			android:gravity="center_vertical"
+			android:layout_alignParentRight="true"
+			android:orientation="vertical">
+			<TextView
+				style="@style/TextViewUndo"
+				android:id="@+id/undo"
+				android:text="@string/cmd_undo"/>	
+		</LinearLayout>
+	</RelativeLayout>	
+</LinearLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<resources> 
+	<!-- ITEMS -->
+	<color name="webview_bg">#000000</color>
+	<color name="input_color">#6CC417</color>
+	<color name="divider">#E0E0E0</color>
+	<color name="light_textview">#555555</color>
+	<color name="list_selected">#555555</color>
+	<color name="key">#808080</color>
+	<color name="light_grey_bg">#33808080</color>
+	<color name="splash_stripe">#59af55</color>
+	<!-- COLORS -->
+	<color name="white">#FFFFFF</color>
+	<color name="black">#000000</color>
+	<color name="blue">#0000FF</color>
+	<color name="lightred">#33FF0000</color>
+	<color name="lightgreen">#3300FF00</color>
+	<color name="lightblue">#330000FF</color>
+	<color name="lightblack">#77000000</color>
+</resources>

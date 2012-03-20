@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="EditTextInputFont" parent="CenterElement">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">80dp</item>
+        <item name="android:textSize">46dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:gravity">left</item>
+        <item name="android:paddingRight">20dp</item>
+    	<item name="android:layout_margin">20dp</item>
+    	<item name="android:textColor">@color/input_color</item>
+    	<item name="android:cursorVisible">false</item>
+    </style>
+    <style name="TextViewFont" parent="CenterElement">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+    	<item name="android:textColor">@color/light_textview</item>
+    </style>
+    <style name="TextViewFontMicro" parent="TextViewFont">
+        <item name="android:textSize">12dp</item>
+    </style>
+    <style name="TextViewFontSmall" parent="TextViewFont">
+        <item name="android:textSize">16dp</item>
+    </style>
+    <style name="TextViewFontLarge" parent="TextViewFont">
+        <item name="android:textSize">26dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TextViewTitleBar" parent="TextViewFontLarge">
+        <item name="android:layout_height">50dp</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+    <style name="TextViewSubtitleBar" parent="TextViewFontSmall">
+        <item name="android:layout_height">30dp</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+    <style name="TextViewUndo" parent="TextViewFontSmall">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">right</item>
+    </style>
+    <style name="TextViewUsedAt" parent="TextViewFontMicro">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">left</item>
+    </style>
+    <style name="TextViewAccessNumber" parent="TextViewFontLarge">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">left</item>
+    </style>
+    <style name="CenterElement">
+    	<item name="android:layout_gravity">center</item>
+    </style>
+    <style name="CustomKeyboard">
+    	<item name="android:layout_width">fill_parent</item>
+    	<item name="android:layout_height">280dp</item>
+    	<item name="android:orientation">vertical</item>
+    	<item name="android:layout_alignParentBottom">true</item>
+    </style>
+    <style name="KeyboardRow">
+    	<item name="android:layout_width">fill_parent</item>
+    	<item name="android:layout_height">fill_parent</item>
+    	<item name="android:layout_weight">1</item>
+    </style>
+    <style name="Key">
+    	<item name="android:layout_width">fill_parent</item>
+    	<item name="android:layout_height">fill_parent</item>
+    	<item name="android:layout_weight">1</item>
+    	<item name="android:background">@drawable/key_selector</item>
+    	<item name="android:textSize">32dp</item>
+    	<item name="android:textColor">@color/key</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="InfoBar">
+    	<item name="android:layout_width">fill_parent</item>
+    	<item name="android:layout_height">50dp</item>
+    	<item name="android:orientation">horizontal</item>
+    </style>
+    <style name="TitleBar">
+    	<item name="android:layout_width">fill_parent</item>
+    	<item name="android:layout_height">wrap_content</item>
+    	<item name="android:orientation">vertical</item>
+    </style>
+    <style name="BoilerplateCanvas">
+    	<item name="android:layout_width">fill_parent</item>
+    	<item name="android:layout_height">fill_parent</item>
+    	<item name="android:orientation">vertical</item>
+    	<item name="android:background">@drawable/stone_texture_repeat</item>
+    </style>
+    <style name="StandardEditText">
+    	<item name="android:layout_width">fill_parent</item>
+    	<item name="android:layout_height">50dp</item>
+    	<item name="android:layout_marginTop">20dp</item>
+    	<item name="android:layout_marginLeft">20dp</item>
+    	<item name="android:layout_marginRight">20dp</item>
+    </style>
+    <style name="StandardButton">
+    	<item name="android:layout_width">fill_parent</item>
+    	<item name="android:layout_height">52dp</item>
+    	<item name="android:layout_marginTop">20dp</item>
+    	<item name="android:layout_marginLeft">20dp</item>
+    	<item name="android:layout_marginRight">20dp</item>
+    	<item name="android:textColor">@color/white</item>
+    	<item name="android:textStyle">bold</item>
+    	<item name="android:textSize">18dp</item>
+    </style>
+    <style name="DoubleTextboxTop" parent="StandardEditText">
+    	<item name="android:layout_height">52dp</item>
+    	<item name="android:layout_marginBottom">0dp</item>
+    </style>    
+    <style name="DoubleTextboxBottom" parent="StandardEditText">
+    	<item name="android:layout_height">52dp</item>
+    	<item name="android:layout_marginTop">0dp</item>
+    </style> 
+    <style name="HistoryRow" parent="">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">60dp</item>
+    </style>
+    <style name="UndoContainer" parent="">
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">60dp</item>
+    </style>
+    <style name="Divider" parent="">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/divider</item>
+    </style>
+    <style name="SplashElem" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="SplashLogo" parent="SplashElem">
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginTop">100dp</item>
+    </style>
+    <style name="SplashText" parent="SplashElem">
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_marginTop">40dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+    </style>
+    <style name="SplashStripeText" parent="SplashElem">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:paddingBottom">8dp</item>
+    </style>
+    <style name="SplashVersionText" parent="TextViewFontSmall">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

@@ -18,21 +18,18 @@ import android.widget.TextView;
 import com.bpellow.android.boilerplate.R;
 import com.bpellow.android.boilerplate.activity.model.Item;
 
-public class HistoryActivity extends BaseActivity {
-	private TextView textviewSubtitle;
-	private ListView listviewHistory;
-	private ListAdapter historyListviewAdapter;
+abstract class BaseListActivity extends BaseActivity {
+	protected TextView textviewSubtitle;
+	protected ListView listviewHistory;
+	protected ListAdapter itemListviewAdapter;
 	
-	private int itemsShowing = 0;
-	private int itemsTotal = 0;
+	protected int itemsShowing = 0;
+	protected int itemsTotal = 0;
 	
-	public static int HISTORY_MAX = 20;
-		
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.history);
         initialize();
     }
     
@@ -41,19 +38,21 @@ public class HistoryActivity extends BaseActivity {
     	textviewSubtitle = (TextView)findViewById(R.id.subtitle);
     	refreshSubtitle();
     	listviewHistory = (ListView)findViewById(R.id.list_history);
-    	historyListviewAdapter = new HistoryAdapter(self, R.layout.history_row_item, historyItems());
-    	listviewHistory.setAdapter(historyListviewAdapter);
+    	itemListviewAdapter = new ItemAdapter(self, R.layout.list_row_item, getItems());
+    	listviewHistory.setAdapter(itemListviewAdapter);
     }
+    
+    abstract ArrayList<Item> getItems();
     
     public void refreshSubtitle() {
-    	textviewSubtitle.setText(String.format(getString(R.string.subtitle_history), itemsShowing, itemsTotal));
+    	textviewSubtitle.setText(String.format(getString(R.string.subtitle_all_items), itemsShowing));
     }
     
-    private class HistoryAdapter extends ArrayAdapter<Item> {
+    private class ItemAdapter extends ArrayAdapter<Item> {
     	Activity context;
         private ArrayList<Item> items;
 
-        public HistoryAdapter(Context context, int textViewResourceId, ArrayList<Item> items) {
+        public ItemAdapter(Context context, int textViewResourceId, ArrayList<Item> items) {
                 super(context, textViewResourceId, items);
                 this.items = items;
                 itemsShowing = items.size();
@@ -65,7 +64,7 @@ public class HistoryActivity extends BaseActivity {
                 View v = convertView;
                 if (v == null) {
                     LayoutInflater vi = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                    v = vi.inflate(R.layout.history_row_item, null);
+                    v = vi.inflate(R.layout.list_row_item, null);
                 }
                 Item item = items.get(position);
                 if (item != null) {
@@ -91,7 +90,7 @@ public class HistoryActivity extends BaseActivity {
 						                	Item item = items.get(position);
 						                	self.dbAdapter.updateItem(item, false);
 						                	items.remove(position);
-						                	((HistoryAdapter)historyListviewAdapter).notifyDataSetChanged();
+						                	((ItemAdapter)itemListviewAdapter).notifyDataSetChanged();
 						                }
 						            })
 						            .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
@@ -109,8 +108,8 @@ public class HistoryActivity extends BaseActivity {
         }
     }
     
-    public ArrayList<Item> historyItems() {
-    	return dbAdapter.fetchUsedHistory();
+    public ArrayList<Item> allItems() {
+    	return dbAdapter.fetchAllItems();
     }
     
 }

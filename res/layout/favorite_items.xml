@@ -7,7 +7,7 @@
 	    android:orientation="vertical">
        	<TextView 
    			style="@style/TextViewTitleBar"
-   			android:text="@string/title_history"/>
+   			android:text="@string/title_favorite_items"/>
    		<View style="@style/Divider"/>
        	<TextView 
        		android:id="@+id/subtitle"

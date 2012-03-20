@@ -12,7 +12,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import com.bpellow.android.boilerplate.activity.HistoryActivity;
+import com.bpellow.android.boilerplate.activity.FavoriteActivity;
 import com.bpellow.android.boilerplate.activity.model.Item;
 import com.bpellow.android.boilerplate.net.ApiProxyStub;
 
@@ -92,6 +92,27 @@ public class DBAdapter {
 		return false;
 	}
 
+	/**
+	 * Return a Cursor over the list of all items in the database that are used
+	 * 
+	 * @return ArrayList of all used items
+	 */
+
+	public ArrayList<Item> fetchAllItems() {
+		Cursor c = database.query(true, ITEM_TABLE, new String[] { KEY_CONTENT,
+				KEY_USED, KEY_USED_AT, KEY_ID },
+				null, null, null, null, null, null);
+		if (c != null) {
+			c.moveToFirst();
+		}
+        ArrayList<Item> used_items = new ArrayList<Item>();
+        while (c.isAfterLast() == false) {
+        	used_items.add(Item.fromCursor(c, false));
+       	    c.moveToNext();
+        }
+        c.close();
+		return used_items;
+	}
 	
 /**
 	 * Return a Cursor over the list of all items in the database that are used
@@ -124,7 +145,7 @@ public class DBAdapter {
 	public ArrayList<Item> fetchUsedHistory() {
 		Cursor c = database.query(true, ITEM_TABLE, new String[] { KEY_CONTENT,
 				KEY_USED, KEY_USED_AT, KEY_ID },
-				KEY_USED + "= 1", null, null, null, KEY_USED_AT+" desc", String.valueOf(HistoryActivity.HISTORY_MAX));
+				KEY_USED + "= 1", null, null, null, KEY_USED_AT+" desc", String.valueOf(FavoriteActivity.MAX_FAVORITES));
 		if (c != null) {
 			c.moveToFirst();
 		}

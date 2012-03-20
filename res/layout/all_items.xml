@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/BoilerplateCanvas"
+    android:orientation="vertical">
+    <LinearLayout 
+    	style="@style/TitleBar"
+	    android:orientation="vertical">
+       	<TextView 
+   			style="@style/TextViewTitleBar"
+   			android:text="@string/title_all_items"/>
+   		<View style="@style/Divider"/>
+       	<TextView 
+       		android:id="@+id/subtitle"
+   			style="@style/TextViewSubtitleBar"
+   			android:text=""/>
+   		<View style="@style/Divider"/>
+    </LinearLayout>
+   	<ListView 
+   		android:id="@+id/list_history"
+   		android:layout_width="fill_parent"
+   		android:layout_height="fill_parent"
+   		android:divider="@color/divider"
+   		android:dividerHeight="1dp"
+   		android:listSelector="@drawable/list_selector">
+   	
+   	</ListView>
+</LinearLayout>

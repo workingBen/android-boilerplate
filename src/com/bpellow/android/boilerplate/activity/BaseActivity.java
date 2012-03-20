@@ -260,7 +260,7 @@ public class BaseActivity extends Activity {
 	    	} else { self.showDialog(DIALOG_ERROR_NETWORK); }
 	    	return true;
 	    case R.id.item_history:
-	        goToActivity(HistoryActivity.class);
+	        goToActivity(FavoriteActivity.class);
 	        return true;
 	    default:
 	        return super.onOptionsItemSelected(item);

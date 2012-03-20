@@ -1,29 +1,27 @@
 # Android Boilerplate
 
-## Contents:
-
-* Activities   
+## Activities   
     - BaseActivity   
     - HistoryActivity   
     - SignInActivity
     - SplashActivity
     - ListActivity
-* SharedPreferences   
-* Database
+## SharedPreferences   
+## Database
     - DBAdapter
     - DBOpenHelper
-* Models
+## Models
     - DateFormat
     - ForceUpgrade
     - Item
     - Token
-* Api
+## Api
     - ApiException
     - ApiProxy
     - ApiProxyStub
     - Utils
     - UtilsStub
-* Resources
+## Resources
     - Layout
     - Color
     - Menu
@@ -31,6 +29,6 @@
     - Values
         - Styles
         - Strings
-* Libs
+## Libs
     - Gson
 

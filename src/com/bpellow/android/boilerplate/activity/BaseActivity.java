@@ -3,9 +3,6 @@ package com.bpellow.android.boilerplate.activity;
 import java.util.ArrayList;
 import java.util.Date;
 
-import net.ApiProxyStub;
-import net.UtilsStub;
-import util.Preferences;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -27,8 +24,10 @@ import android.widget.Toast;
 
 import com.bpellow.android.boilerplate.R;
 import com.bpellow.android.boilerplate.activity.model.Item;
-
-import database.DBAdapter;
+import com.bpellow.android.boilerplate.database.DBAdapter;
+import com.bpellow.android.boilerplate.net.ApiProxyStub;
+import com.bpellow.android.boilerplate.net.UtilsStub;
+import com.bpellow.android.boilerplate.util.Preferences;
 
 public class BaseActivity extends Activity {
 	protected static Handler handler;

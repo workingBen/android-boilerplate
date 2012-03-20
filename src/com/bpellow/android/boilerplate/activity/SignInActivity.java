@@ -1,7 +1,5 @@
 package com.bpellow.android.boilerplate.activity;
 
-import net.ApiProxyStub;
-import util.Preferences;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -11,6 +9,8 @@ import android.widget.EditText;
 
 import com.bpellow.android.boilerplate.R;
 import com.bpellow.android.boilerplate.activity.model.Token;
+import com.bpellow.android.boilerplate.net.ApiProxyStub;
+import com.bpellow.android.boilerplate.util.Preferences;
 
 public class SignInActivity extends BaseActivity {
 	private EditText inputUsername;

@@ -1,4 +1,4 @@
-package database;
+package com.bpellow.android.boilerplate.database;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

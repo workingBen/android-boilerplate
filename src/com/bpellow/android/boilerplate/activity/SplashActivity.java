@@ -7,10 +7,6 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import net.ApiProxyStub;
-import net.UtilsStub;
-import util.Preferences;
-import util.RunnableUtils;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -24,6 +20,10 @@ import android.widget.Toast;
 
 import com.bpellow.android.boilerplate.R;
 import com.bpellow.android.boilerplate.activity.model.ForceUpgrade;
+import com.bpellow.android.boilerplate.net.ApiProxyStub;
+import com.bpellow.android.boilerplate.net.UtilsStub;
+import com.bpellow.android.boilerplate.util.Preferences;
+import com.bpellow.android.boilerplate.util.RunnableUtils;
 
 public class SplashActivity extends BaseActivity {
 	private final int SPLASH_DELAY = 3000;

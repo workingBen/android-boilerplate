@@ -1,4 +1,4 @@
-package net;
+package com.bpellow.android.boilerplate.net;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;

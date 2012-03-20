@@ -1,4 +1,4 @@
-package util;
+package com.bpellow.android.boilerplate.util;
 
 import java.util.Date;
 

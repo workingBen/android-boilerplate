@@ -1,4 +1,4 @@
-package util;
+package com.bpellow.android.boilerplate.util;
 
 import com.bpellow.android.boilerplate.activity.BaseActivity;
 

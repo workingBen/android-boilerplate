@@ -1,4 +1,4 @@
-package net;
+package com.bpellow.android.boilerplate.net;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

@@ -1,19 +1,16 @@
-package net;
+package com.bpellow.android.boilerplate.net;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
-import android.os.Handler;
-
 import com.bpellow.android.boilerplate.activity.BaseActivity;
 import com.bpellow.android.boilerplate.activity.model.ForceUpgrade;
 import com.bpellow.android.boilerplate.activity.model.Item;
 import com.bpellow.android.boilerplate.activity.model.Token;
+import com.bpellow.android.boilerplate.database.DBAdapter;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-
-import database.DBAdapter;
 
 public class ApiProxyStub {
 	public static final String API_VERSION = "1.0";

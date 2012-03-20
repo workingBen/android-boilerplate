@@ -1,4 +1,4 @@
-package database;
+package com.bpellow.android.boilerplate.database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

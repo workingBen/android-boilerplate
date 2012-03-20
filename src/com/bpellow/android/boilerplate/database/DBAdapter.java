@@ -3,15 +3,18 @@ package com.bpellow.android.boilerplate.database;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.bpellow.android.boilerplate.activity.HistoryActivity;
 import com.bpellow.android.boilerplate.activity.model.Item;
+import com.bpellow.android.boilerplate.net.ApiProxyStub;
 
 public class DBAdapter {
 
@@ -35,6 +38,7 @@ public class DBAdapter {
 		if (dbHelper == null) {
 			dbHelper = new DBOpenHelper(context);
 			database = dbHelper.getWritableDatabase();
+			seedDatabase();
 		} 
 		return this;
 	}
@@ -46,6 +50,19 @@ public class DBAdapter {
 	
 	public Boolean deleteDatabase(Context ctx) {
 		return ctx.deleteDatabase(DBOpenHelper.DATABASE_NAME);
+	}
+	
+	/** SEED THE DATABASE ONLY IN STUB APPS! **/
+	public void seedDatabase() {
+		if (localItemCount() == 0) {
+			Log.d("DBAdapter", "Database has no items. Seeding.");
+			Iterator<Item> seedIterator = ApiProxyStub.getItems(null, null, null, null, null).iterator();
+			while(seedIterator.hasNext()) {
+				storeItem(seedIterator.next());
+			}
+		} else {
+			Log.d("DBAdapter", "Database has already been seeded.");
+		}
 	}
 
 	

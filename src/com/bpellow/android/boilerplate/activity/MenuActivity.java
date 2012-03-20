@@ -25,6 +25,7 @@ public class MenuActivity extends BaseActivity {
     }
     
     public void initialize() {
+    	super.initialize();
     	menuBtn1 = (Button)findViewById(R.id.menu_btn_1);
     	menuBtn2 = (Button)findViewById(R.id.menu_btn_2);
     	menuBtn3 = (Button)findViewById(R.id.menu_btn_3);

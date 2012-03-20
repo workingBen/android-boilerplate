@@ -29,6 +29,7 @@ public class SignInActivity extends BaseActivity {
     }
     
     public void initialize() {
+    	super.initialize();
     	inputUsername = (EditText)findViewById(R.id.username);
     	inputPassword = (EditText)findViewById(R.id.password);
     	signinBtn = (Button)findViewById(R.id.sign_in_btn);

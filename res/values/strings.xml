@@ -16,6 +16,13 @@
     <string name="item_logout">Sign Out</string>
     <string name="item_history">History</string>
     <string name="item_sync">Sync Codes</string>
+  <!-- MAIN MENU ITEMS -->
+    <string name="menu_btn_1">List</string>
+    <string name="menu_btn_2">Search</string>
+    <string name="menu_btn_3">Button 3</string>
+    <string name="menu_btn_4">Button 4</string>
+    <string name="menu_btn_5">Button 5</string>
+    <string name="menu_btn_6">Button 6</string>
   <!-- TITLES -->
     <string name="title_history">Redemption History</string>
     <string name="subtitle_history">Showing %1$d of %2$d Used</string>

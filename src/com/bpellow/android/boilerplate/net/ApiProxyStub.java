@@ -86,7 +86,7 @@ public class ApiProxyStub {
     /* =============================== NETWORK STUBS =================================*/
     public static void stubNetworkDelay() {
     	try {
-    		Thread.sleep(5000);
+    		Thread.sleep(2000);
     	} catch (Exception e) {}
     }
     

@@ -56,11 +56,11 @@ public class SplashActivity extends BaseActivity {
     
     public void progressToNextActivity() {
         Runnable signInRunnable = RunnableUtils.startActivityRunnableFactory(this, SignInActivity.class, true);
-        Runnable useItemRunnable = RunnableUtils.startActivityRunnableFactory(this, UseItemActivity.class, true);
+        Runnable mainMenuRunnable = RunnableUtils.startActivityRunnableFactory(this, MenuActivity.class, true);
         
         // after a splash delay, go to the logged out selector or current deal
         if (Preferences.loggedInUser(this)) {
-        	handler.postDelayed(useItemRunnable, SPLASH_DELAY);
+        	handler.postDelayed(mainMenuRunnable, SPLASH_DELAY);
         } else {
         	handler.postDelayed(signInRunnable, SPLASH_DELAY);
         }

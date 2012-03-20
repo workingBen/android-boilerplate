@@ -93,7 +93,7 @@ public class SignInActivity extends BaseActivity {
 			dismissDialog(DIALOG_SIGN_IN);
 			if (result) {
 				// goto deal page
-				self.goToActivity(UseItemActivity.class, true);
+				self.goToActivity(MenuActivity.class, true);
 			} else {
 				loginTask = null;
 			}

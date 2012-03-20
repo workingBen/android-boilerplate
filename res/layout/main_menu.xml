@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/BoilerplateCanvas">
+    <TableRow style="@style/ExpandVertical">
+        <Button 
+	        style="@style/ExpandHorizontal"
+	        android:id="@+id/menu_btn_1"
+            android:text="@string/menu_btn_1"/>
+        <Button 
+	        style="@style/ExpandHorizontal"
+	        android:id="@+id/menu_btn_2"
+            android:text="@string/menu_btn_2"/>
+    </TableRow>
+    <TableRow style="@style/ExpandVertical">
+        <Button 
+	        style="@style/ExpandHorizontal"
+	        android:id="@+id/menu_btn_3"
+            android:text="@string/menu_btn_3"/>
+        <Button 
+	        style="@style/ExpandHorizontal"
+	        android:id="@+id/menu_btn_4"
+            android:text="@string/menu_btn_4"/>
+    </TableRow>
+    <TableRow style="@style/ExpandVertical">
+        <Button 
+	        style="@style/ExpandHorizontal"
+	        android:id="@+id/menu_btn_5"
+            android:text="@string/menu_btn_5"/>
+        <Button 
+	        style="@style/ExpandHorizontal"
+	        android:id="@+id/menu_btn_6"
+            android:text="@string/menu_btn_6"/>
+    </TableRow>
+</TableLayout>

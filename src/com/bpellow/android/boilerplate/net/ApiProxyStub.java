@@ -104,21 +104,21 @@ public class ApiProxyStub {
     }	
     public static ArrayList<Item> itemsStub() {
     	ArrayList<Item> items = new ArrayList<Item>();
-        items.add(Item.fromJSON((JsonObject)new JsonParser().parse("{\"content\":\"dolore magna aliqua\", \"created_at\":\"2011-11-01T11:51:36-07:00\"}")));
-        items.add(Item.fromJSON((JsonObject)new JsonParser().parse("{\"content\":\"Ut enim ad minim veniam\", \"created_at\":\"2011-11-01T11:51:36-07:00\"}")));
-        items.add(Item.fromJSON((JsonObject)new JsonParser().parse("{\"content\":\"quis nostrud exercitation\", \"created_at\":\"2011-11-01T11:51:36-07:00\"}")));
-        items.add(Item.fromJSON((JsonObject)new JsonParser().parse("{\"content\":\"ullamco laboris\", \"created_at\":\"2011-11-01T11:51:36-07:00\"}")));
-        items.add(Item.fromJSON((JsonObject)new JsonParser().parse("{\"content\":\"nisi ut aliquip ex ea\", \"created_at\":\"2011-11-01T11:51:36-07:00\"}")));
+        items.add(Item.fromJSON((JsonObject)new JsonParser().parse("{\"content\":\"Item 6\", \"created_at\":\"2011-11-01T11:51:36-07:00\"}")));
+        items.add(Item.fromJSON((JsonObject)new JsonParser().parse("{\"content\":\"Item 7\", \"created_at\":\"2011-11-01T11:51:36-07:00\"}")));
+        items.add(Item.fromJSON((JsonObject)new JsonParser().parse("{\"content\":\"Item 8\", \"created_at\":\"2011-11-01T11:51:36-07:00\"}")));
+        items.add(Item.fromJSON((JsonObject)new JsonParser().parse("{\"content\":\"Item 9\", \"created_at\":\"2011-11-01T11:51:36-07:00\"}")));
+        items.add(Item.fromJSON((JsonObject)new JsonParser().parse("{\"content\":\"Item 10\", \"created_at\":\"2011-11-01T11:51:36-07:00\"}")));
         items.addAll(usedItemsStub());
         return items;
     }
     public static ArrayList<Item> usedItemsStub() {
     	ArrayList<Item> items = new ArrayList<Item>();
-        items.add(Item.fromJSON((JsonObject)new JsonParser().parse("{\"content\":\"Lorem Ipsum\", \"used\":\"true\", \"used_at\":\"2011-11-01T11:51:36-07:00\", \"created_at\":\"2011-11-01T11:51:36-07:00\"}")));
-        items.add(Item.fromJSON((JsonObject)new JsonParser().parse("{\"content\":\"dolor sit amet\", \"used\":\"true\", \"used_at\":\"2011-11-01T11:51:36-07:00\", \"created_at\":\"2011-11-01T11:51:36-07:00\"}")));
-        items.add(Item.fromJSON((JsonObject)new JsonParser().parse("{\"content\":\"consectetur adipisicing elit\", \"used\":\"true\", \"used_at\":\"2011-11-01T11:51:36-07:00\", \"created_at\":\"2011-11-01T11:51:36-07:00\"}")));
-        items.add(Item.fromJSON((JsonObject)new JsonParser().parse("{\"content\":\"sed do eiusmod tempor\", \"used\":\"true\", \"used_at\":\"2011-11-01T11:51:36-07:00\", \"created_at\":\"2011-11-01T11:51:36-07:00\"}")));
-        items.add(Item.fromJSON((JsonObject)new JsonParser().parse("{\"content\":\"incididunt ut labore\", \"used\":\"true\", \"used_at\":\"2011-11-01T11:51:36-07:00\", \"created_at\":\"2011-11-01T11:51:36-07:00\"}")));
+        items.add(Item.fromJSON((JsonObject)new JsonParser().parse("{\"content\":\"Item 1\", \"used\":\"true\", \"used_at\":\"2011-11-01T11:51:36-07:00\", \"created_at\":\"2011-11-01T11:51:36-07:00\"}")));
+        items.add(Item.fromJSON((JsonObject)new JsonParser().parse("{\"content\":\"Item 2\", \"used\":\"true\", \"used_at\":\"2011-11-01T11:51:36-07:00\", \"created_at\":\"2011-11-01T11:51:36-07:00\"}")));
+        items.add(Item.fromJSON((JsonObject)new JsonParser().parse("{\"content\":\"Item 3\", \"used\":\"true\", \"used_at\":\"2011-11-01T11:51:36-07:00\", \"created_at\":\"2011-11-01T11:51:36-07:00\"}")));
+        items.add(Item.fromJSON((JsonObject)new JsonParser().parse("{\"content\":\"Item 4\", \"used\":\"true\", \"used_at\":\"2011-11-01T11:51:36-07:00\", \"created_at\":\"2011-11-01T11:51:36-07:00\"}")));
+        items.add(Item.fromJSON((JsonObject)new JsonParser().parse("{\"content\":\"Item 5\", \"used\":\"true\", \"used_at\":\"2011-11-01T11:51:36-07:00\", \"created_at\":\"2011-11-01T11:51:36-07:00\"}")));
         return items;
     }
 }

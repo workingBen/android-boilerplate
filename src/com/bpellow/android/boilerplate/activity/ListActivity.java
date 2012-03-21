@@ -28,7 +28,7 @@ public class ListActivity extends BaseListActivity {
     }
     
     public void initialize() {
-    	super.initialize();
+    	super.initialize(R.layout.list_row_item);
     	refreshSubtitle();
     }
     

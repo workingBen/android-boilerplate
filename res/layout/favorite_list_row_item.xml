@@ -17,5 +17,15 @@
 			style="@style/TextViewUsedAt"
 			android:id="@+id/used_at"/>
 		</LinearLayout>
+		<LinearLayout
+			style="@style/UndoContainer"
+			android:gravity="center_vertical"
+			android:layout_alignParentRight="true"
+			android:orientation="vertical">
+			<TextView
+				style="@style/TextViewUndo"
+				android:id="@+id/undo"
+				android:text="@string/cmd_undo"/>	
+		</LinearLayout>
 	</RelativeLayout>	
 </LinearLayout>

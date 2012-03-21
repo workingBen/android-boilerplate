@@ -279,3 +279,9 @@ public class DBAdapter {
 		return values;
 	}
 }
+
+/**
+	TO DEBUG: 
+	`adb -s emulator-5554 shell`
+	`sqlite3 /data/data/com.bpellow.android.boilerplate/databases/android_boilerplate_database`
+**/

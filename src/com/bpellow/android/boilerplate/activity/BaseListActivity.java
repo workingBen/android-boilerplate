@@ -26,19 +26,21 @@ abstract class BaseListActivity extends BaseActivity {
 	protected int itemsShowing = 0;
 	protected int itemsTotal = 0;
 	
+	private int rowId;
+	
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initialize();
     }
     
-    public void initialize() {
+    public void initialize(Integer androidLayoutId) {
+    	rowId = androidLayoutId;
     	super.initialize();
     	textviewSubtitle = (TextView)findViewById(R.id.subtitle);
     	refreshSubtitle();
     	listviewHistory = (ListView)findViewById(R.id.list_history);
-    	itemListviewAdapter = new ItemAdapter(self, R.layout.list_row_item, getItems());
+    	itemListviewAdapter = new ItemAdapter(self, rowId, getItems());
     	listviewHistory.setAdapter(itemListviewAdapter);
     }
     
@@ -64,19 +66,19 @@ abstract class BaseListActivity extends BaseActivity {
                 View v = convertView;
                 if (v == null) {
                     LayoutInflater vi = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                    v = vi.inflate(R.layout.list_row_item, null);
+                    v = vi.inflate(rowId, null);
                 }
                 Item item = items.get(position);
                 if (item != null) {
                         TextView c = (TextView) v.findViewById(R.id.content);
                         TextView ua = (TextView) v.findViewById(R.id.used_at);
                         TextView undo = (TextView) v.findViewById(R.id.undo);
-                        undo.setTag(String.valueOf(position));
-                        undo.setContentDescription(item.getContent());
                         
                         if (c != null) { c.setText("#"+item.getContent()); }
-                        if (ua != null) { ua.setText("Used: "+ item.getUsedAtAsString()); }
+                        if (ua != null) { ua.setText("Added: "+ item.getUsedAtAsString()); }
                         if (undo != null) { 
+                        	undo.setTag(String.valueOf(position));
+                        	undo.setContentDescription(item.getContent());
                         	undo.setOnClickListener(new View.OnClickListener() {
 								@Override
 								public void onClick(final View v) {

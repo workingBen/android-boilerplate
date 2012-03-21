@@ -29,7 +29,7 @@ public class FavoriteActivity extends BaseListActivity {
     }
     
     public void initialize() {
-    	super.initialize();
+    	super.initialize(R.layout.favorite_list_row_item);
     	refreshTitles();
     }
     

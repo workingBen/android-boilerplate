@@ -29,7 +29,7 @@
     <string name="title_favorite_items">Favorite Items</string>
     <string name="subtitle_favorite_items">Showing %1$d of %2$d Favorites</string>
   <!-- COMMANDS -->
-    <string name="cmd_undo"><u>Unuse</u></string>
+    <string name="cmd_undo"><u>Remove</u></string>
     <string name="cmd_sync_now">Sync Now</string>
     <string name="cmd_dont_logout">Dont Logout</string>
   <!-- ERRORS -->
@@ -50,7 +50,7 @@
     <string name="dialog_sync_down"> Now Syncing Items: This may take a few minutes. Please Wait...</string>
     <string name="dialog_sign_in">Now Signing In. Please Wait...</string>
     <string name="dialog_check_force_upgrade">Please Wait... Checking for Updates.</string>
-    <string name="dialog_confirm_undo">Mark %1$s Unused?</string>
+    <string name="dialog_confirm_undo">Remove %1$s?</string>
 </resources>
 
   

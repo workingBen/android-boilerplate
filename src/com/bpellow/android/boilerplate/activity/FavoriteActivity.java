@@ -39,7 +39,7 @@ public class FavoriteActivity extends BaseListActivity {
     }
 
     public ArrayList<Item> getItems() {
-    	return dbAdapter.fetchUsedHistory();
+    	return dbAdapter.fetchFavoritedHistory();
     }
     
 }

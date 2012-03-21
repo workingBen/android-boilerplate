@@ -7,7 +7,7 @@
     <string name="redeem_info_text_view">Enter the code shown on the SMS or printout.</string> 
     <string name="input_max">ID Should Be 5 Digits</string>
     <string name="input_min">ID Should Be 5 Digits</string>
-    <string name="redeem_success">%1$s is Now Used</string>
+    <string name="redeem_success">%1$s is Now Favorited</string>
     <string name="enter_code">Enter Code</string>
   <!-- SIGN IN -->
     <string name="sign_in">Sign In</string>
@@ -34,7 +34,7 @@
     <string name="cmd_dont_logout">Dont Logout</string>
   <!-- ERRORS -->
     <string name="error_item_not_found">%1$s Not Found</string>
-    <string name="error_item_already_redeemed">%1$s Already Used</string>
+    <string name="error_item_already_redeemed">%1$s Already Favorited</string>
     <string name="error_must_sync_before_logout">Oops! Please Sync Items before logging out. Thank you!</string>
     <string name="error_problem_syncing_completely">Sync Error: There was a problem with syncing items.  Please try again or call 877-555-1234.</string>
     <string name="error_sync_up">Sync Error: There might be an issue with your internet connection. Please try again. If the problem persists, please call 877-555-1234.</string>

@@ -15,7 +15,7 @@ import android.widget.TextView;
 import com.bpellow.android.boilerplate.R;
 import com.bpellow.android.boilerplate.activity.model.Item;
 
-public class UseItemActivity extends BaseActivity {
+public class FavoriteItemActivity extends BaseActivity {
 	private EditText item_input;
 	private LinearLayout info_bar;
 	private TextView results_textview;
@@ -105,7 +105,7 @@ public class UseItemActivity extends BaseActivity {
     		Item item = dbAdapter.fetchItem(itemId);
     		if (item == null) {
     			errorResult(String.format(self.getString(R.string.error_item_not_found), "#"+itemId));
-    		} else if (item.getUsed()) {
+    		} else if (item.getFavorited()) {
     			errorResult(String.format(self.getString(R.string.error_item_already_redeemed), "#"+itemId));
     		} else {
     			dbAdapter.updateItem(item, true);

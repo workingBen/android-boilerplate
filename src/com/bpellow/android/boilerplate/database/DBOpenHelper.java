@@ -10,7 +10,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
     protected static final String DATABASE_NAME = "android_boilerplate_database";
     protected static final int DATABASE_VERSION = 1;
     protected static final String ITEM_TABLE_CREATE = "CREATE TABLE items (_id integer, "
-		+ "content text not null, used boolean, used_at integer);";
+		+ "content text not null, favorited boolean, favorited_at integer);";
 
     public DBOpenHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

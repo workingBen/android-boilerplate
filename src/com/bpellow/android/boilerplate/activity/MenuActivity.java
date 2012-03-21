@@ -48,7 +48,7 @@ public class MenuActivity extends BaseActivity {
     	menuBtn3.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				self.goToActivity(UseItemActivity.class);
+				self.goToActivity(FavoriteItemActivity.class);
 			}
 		});
     }   

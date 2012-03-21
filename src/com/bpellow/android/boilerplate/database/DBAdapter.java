@@ -24,8 +24,8 @@ public class DBAdapter {
 	// Database fields
 	private static final String KEY_ID = "_id";
 	private static final String KEY_CONTENT = "content";
-	private static final String KEY_USED = "used";
-	private static final String KEY_USED_AT = "used_at";
+	private static final String KEY_USED = "favorited";
+	private static final String KEY_USED_AT = "favorited_at";
 	private Context context;
 	private SQLiteDatabase database;
 	private DBOpenHelper dbHelper;
@@ -82,9 +82,9 @@ public class DBAdapter {
 	 * Update the item
 	 */
 
-	public boolean updateItem(Item item, Boolean used) {
-		if (itemIsUsed(item.getId()) != used) {
-			ContentValues updateValues = createContentValues(used);
+	public boolean updateItem(Item item, Boolean favorited) {
+		if (itemIsFavorited(item.getId()) != favorited) {
+			ContentValues updateValues = createContentValues(favorited);
 
 			return database.update(ITEM_TABLE, updateValues, KEY_ID + "="
 				+ item.getId(), null) > 0;
@@ -93,9 +93,9 @@ public class DBAdapter {
 	}
 
 	/**
-	 * Return a Cursor over the list of all items in the database that are used
+	 * Return a Cursor over the list of all items in the database that are favorited
 	 * 
-	 * @return ArrayList of all used items
+	 * @return ArrayList of all favorited items
 	 */
 
 	public ArrayList<Item> fetchAllItems() {
@@ -105,79 +105,79 @@ public class DBAdapter {
 		if (c != null) {
 			c.moveToFirst();
 		}
-        ArrayList<Item> used_items = new ArrayList<Item>();
+        ArrayList<Item> favorited_items = new ArrayList<Item>();
         while (c.isAfterLast() == false) {
-        	used_items.add(Item.fromCursor(c, false));
+        	favorited_items.add(Item.fromCursor(c, false));
        	    c.moveToNext();
         }
         c.close();
-		return used_items;
+		return favorited_items;
 	}
 	
 /**
-	 * Return a Cursor over the list of all items in the database that are used
+	 * Return a Cursor over the list of all items in the database that are favorited
 	 * 
-	 * @return ArrayList of all used items
+	 * @return ArrayList of all favorited items
 	 */
 
-	public ArrayList<Item> fetchAllUsedItems() {
+	public ArrayList<Item> fetchAllFavoritedItems() {
 		Cursor c = database.query(true, ITEM_TABLE, new String[] { KEY_CONTENT,
 				KEY_USED, KEY_USED_AT, KEY_ID },
 				KEY_USED + "=" + "1", null, null, null, null, null);
 		if (c != null) {
 			c.moveToFirst();
 		}
-        ArrayList<Item> used_items = new ArrayList<Item>();
+        ArrayList<Item> favorited_items = new ArrayList<Item>();
         while (c.isAfterLast() == false) {
-        	used_items.add(Item.fromCursor(c, false));
+        	favorited_items.add(Item.fromCursor(c, false));
        	    c.moveToNext();
         }
         c.close();
-		return used_items;
+		return favorited_items;
 	}
 	
 	/**
-	 * Return a Cursor over the list of all items in the database that are used
+	 * Return a Cursor over the list of all items in the database that are favorited
 	 * 
-	 * @return ArrayList of all used items
+	 * @return ArrayList of all favorited items
 	 */
 
-	public ArrayList<Item> fetchUsedHistory() {
+	public ArrayList<Item> fetchFavoritedHistory() {
 		Cursor c = database.query(true, ITEM_TABLE, new String[] { KEY_CONTENT,
 				KEY_USED, KEY_USED_AT, KEY_ID },
 				KEY_USED + "= 1", null, null, null, KEY_USED_AT+" desc", String.valueOf(FavoriteActivity.MAX_FAVORITES));
 		if (c != null) {
 			c.moveToFirst();
 		}
-        ArrayList<Item> used_items = new ArrayList<Item>();
+        ArrayList<Item> favorited_items = new ArrayList<Item>();
         while (c.isAfterLast() == false) {
-        	used_items.add(Item.fromCursor(c, false));
+        	favorited_items.add(Item.fromCursor(c, false));
        	    c.moveToNext();
         }
         c.close();
-		return used_items;
+		return favorited_items;
 	}
 
 	/**
-	 * Return a Cursor over the list of all items in the database that are used
+	 * Return a Cursor over the list of all items in the database that are favorited
 	 * 
-	 * @return ArrayList of all used items
+	 * @return ArrayList of all favorited items
 	 */
 
-	public ArrayList<Item> fetchUsedItemsSince(Long last_sync) {
+	public ArrayList<Item> fetchFavoritedItemsSince(Long last_sync) {
 		Cursor c = database.query(true, ITEM_TABLE, new String[] { KEY_CONTENT,
 				KEY_USED, KEY_USED_AT, KEY_ID },
 				KEY_USED + "=" + "1 and "+KEY_USED_AT+" is not null and "+KEY_USED_AT+" > "+last_sync, null, null, null, null, null);
 		if (c != null) {
 			c.moveToFirst();
 		}
-        ArrayList<Item> used_items = new ArrayList<Item>();
+        ArrayList<Item> favorited_items = new ArrayList<Item>();
         while (c.isAfterLast() == false) {
-        	used_items.add(Item.fromCursor(c, false));
+        	favorited_items.add(Item.fromCursor(c, false));
        	    c.moveToNext();
         }
         c.close();
-		return used_items;
+		return favorited_items;
 	}
 	
 /**
@@ -206,18 +206,18 @@ public class DBAdapter {
 	}
 	
 	/**
-	 * Is item used?
+	 * Is item favorited?
 	 */	
 	
-	public boolean itemIsUsed(Integer _id) {
-		Cursor c = database.rawQuery("select 1 from items where _id="+String.valueOf(_id)+" and used = 1;", null);
+	public boolean itemIsFavorited(Integer _id) {
+		Cursor c = database.rawQuery("select 1 from items where _id="+String.valueOf(_id)+" and favorited = 1;", null);
 		boolean exists = (c.getCount() > 0);
 		c.close();
 		return exists;
 	}
 	
 	/**
-	 * How many used Items are there?
+	 * How many favorited Items are there?
 	 */	
 	
 	public Integer localItemCount() {
@@ -230,11 +230,11 @@ public class DBAdapter {
 	}
 	
 	/**
-	 * How many used Items are there?
+	 * How many favorited Items are there?
 	 */	
 	
-	public Integer usedItemCount() {
-		Cursor c = database.rawQuery("select count(*) as count from items where used = 1;", null);
+	public Integer favoritedItemCount() {
+		Cursor c = database.rawQuery("select count(*) as count from items where favorited = 1;", null);
 		c.moveToFirst();
 		int col = c.getColumnIndex("count");
 		int count = c.getInt(col);
@@ -243,11 +243,11 @@ public class DBAdapter {
 	}
 	
 	/**
-	 * How many used with used_at Items are there?
+	 * How many favorited with favorited_at Items are there?
 	 */	
 	
-	public Integer totalUsedHistoryCount() {
-		Cursor c = database.rawQuery("select count(*) as count from items where used = 1 order by used_at desc;", null);
+	public Integer totalFavoritedHistoryCount() {
+		Cursor c = database.rawQuery("select count(*) as count from items where favorited = 1 order by favorited_at desc;", null);
 		c.moveToFirst();
 		int col = c.getColumnIndex("count");
 		int count = c.getInt(col);
@@ -261,19 +261,19 @@ public class DBAdapter {
 		
 		values.put(KEY_CONTENT, item.getContent());
 		values.put(KEY_ID, item.getId());
-		if (item.getUsed() != null)
-			values.put(KEY_USED, item.getUsed());
-		if (item.getUsedAt() != null) {
-			values.put(KEY_USED_AT, item.getUsedAt().getTime());
+		if (item.getFavorited() != null)
+			values.put(KEY_USED, item.getFavorited());
+		if (item.getFavoritedAt() != null) {
+			values.put(KEY_USED_AT, item.getFavoritedAt().getTime());
 		}
 		
 		return values;
 	}
 	
-	private ContentValues createContentValues(Boolean used) {
+	private ContentValues createContentValues(Boolean favorited) {
 		ContentValues values = new ContentValues();
-		values.put(KEY_USED, used);
-		if (used) {
+		values.put(KEY_USED, favorited);
+		if (favorited) {
 			values.put(KEY_USED_AT, new Date().getTime());
 		}
 		return values;

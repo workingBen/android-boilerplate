@@ -62,8 +62,8 @@ public class ApiProxyStub {
     	return StubConfig.dbAdapter.localItemCount();
     }
     
-    public static Integer getUsedItemCount(String auth_token, HashMap<String,Object> options) {
-    	return StubConfig.dbAdapter.usedItemCount();
+    public static Integer getFavoritedItemCount(String auth_token, HashMap<String,Object> options) {
+    	return StubConfig.dbAdapter.favoritedItemCount();
     }
     
     public static ArrayList<Item> getItems(String auth_token, Integer offset, Integer batch_size, Date last_sync, HashMap<String,Object> options) {
@@ -109,16 +109,16 @@ public class ApiProxyStub {
         items.add(Item.fromJSON((JsonObject)new JsonParser().parse("{\"id\":7, \"content\":\"Item 7\", \"created_at\":\"2011-11-01T11:51:36-07:00\"}")));
         items.add(Item.fromJSON((JsonObject)new JsonParser().parse("{\"id\":8, \"content\":\"Item 8\", \"created_at\":\"2011-11-01T11:51:36-07:00\"}")));
         items.add(Item.fromJSON((JsonObject)new JsonParser().parse("{\"id\":9, \"content\":\"Item 9\", \"created_at\":\"2011-11-01T11:51:36-07:00\"}")));
-        items.addAll(usedItemsStub());
+        items.addAll(favoritedItemsStub());
         return items;
     }
-    public static ArrayList<Item> usedItemsStub() {
+    public static ArrayList<Item> favoritedItemsStub() {
     	ArrayList<Item> items = new ArrayList<Item>();
-        items.add(Item.fromJSON((JsonObject)new JsonParser().parse("{\"id\":0, \"content\":\"Item 0\", \"used\":\"true\", \"used_at\":\"2011-11-01T11:51:36-07:00\", \"created_at\":\"2011-11-01T11:51:36-07:00\"}")));
-        items.add(Item.fromJSON((JsonObject)new JsonParser().parse("{\"id\":1, \"content\":\"Item 1\", \"used\":\"true\", \"used_at\":\"2011-11-01T11:51:36-07:00\", \"created_at\":\"2011-11-01T11:51:36-07:00\"}")));
-        items.add(Item.fromJSON((JsonObject)new JsonParser().parse("{\"id\":2, \"content\":\"Item 2\", \"used\":\"true\", \"used_at\":\"2011-11-01T11:51:36-07:00\", \"created_at\":\"2011-11-01T11:51:36-07:00\"}")));
-        items.add(Item.fromJSON((JsonObject)new JsonParser().parse("{\"id\":3, \"content\":\"Item 3\", \"used\":\"true\", \"used_at\":\"2011-11-01T11:51:36-07:00\", \"created_at\":\"2011-11-01T11:51:36-07:00\"}")));
-        items.add(Item.fromJSON((JsonObject)new JsonParser().parse("{\"id\":4, \"content\":\"Item 4\", \"used\":\"true\", \"used_at\":\"2011-11-01T11:51:36-07:00\", \"created_at\":\"2011-11-01T11:51:36-07:00\"}")));
+        items.add(Item.fromJSON((JsonObject)new JsonParser().parse("{\"id\":0, \"content\":\"Item 0\", \"favorited\":\"true\", \"favorited_at\":\"2011-11-01T11:51:36-07:00\", \"created_at\":\"2011-11-01T11:51:36-07:00\"}")));
+        items.add(Item.fromJSON((JsonObject)new JsonParser().parse("{\"id\":1, \"content\":\"Item 1\", \"favorited\":\"true\", \"favorited_at\":\"2011-11-01T11:51:36-07:00\", \"created_at\":\"2011-11-01T11:51:36-07:00\"}")));
+        items.add(Item.fromJSON((JsonObject)new JsonParser().parse("{\"id\":2, \"content\":\"Item 2\", \"favorited\":\"true\", \"favorited_at\":\"2011-11-01T11:51:36-07:00\", \"created_at\":\"2011-11-01T11:51:36-07:00\"}")));
+        items.add(Item.fromJSON((JsonObject)new JsonParser().parse("{\"id\":3, \"content\":\"Item 3\", \"favorited\":\"true\", \"favorited_at\":\"2011-11-01T11:51:36-07:00\", \"created_at\":\"2011-11-01T11:51:36-07:00\"}")));
+        items.add(Item.fromJSON((JsonObject)new JsonParser().parse("{\"id\":4, \"content\":\"Item 4\", \"favorited\":\"true\", \"favorited_at\":\"2011-11-01T11:51:36-07:00\", \"created_at\":\"2011-11-01T11:51:36-07:00\"}")));
         return items;
     }
 }

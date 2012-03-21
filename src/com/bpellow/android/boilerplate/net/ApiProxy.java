@@ -204,13 +204,13 @@ public class ApiProxy {
     	}        
     }
     
-    public static Integer getUsedItemCount(String auth_token, HashMap<String,Object> options) {
+    public static Integer getFavoritedItemCount(String auth_token, HashMap<String,Object> options) {
     	if (options == null) {
     		options = new HashMap<String,Object>();
     	}
     	if (auth_token != null) options.put("token", auth_token);
     	options.put("last_sync", (new Date(0).getTime()/1000));
-    	options.put("used", "true");
+    	options.put("favorited", "true");
     	
     	try {
     		JsonObject elm = (JsonObject)apiGet("/v1/items/count", queryParams(options));

@@ -12,8 +12,8 @@ import com.google.gson.JsonParseException;
 
 public class Item {
     String content;
-    Boolean used;
-    Date used_at;
+    Boolean favorited;
+    Date favorited_at;
     Integer id;
 
     public Item() {}
@@ -55,14 +55,14 @@ public class Item {
     	
     	Item item = new Item();
     	int col1 = c.getColumnIndex("content");
-    	int col2 = c.getColumnIndex("used");
-    	int col3 = c.getColumnIndex("used_at");
+    	int col2 = c.getColumnIndex("favorited");
+    	int col3 = c.getColumnIndex("favorited_at");
     	int col4 = c.getColumnIndex("_id");
     	item.content = c.getString(col1);
     	item.id = c.getInt(col4);
-    	item.used = (c.getInt(col2) == 1) ? true : false;
+    	item.favorited = (c.getInt(col2) == 1) ? true : false;
     	if (!c.isNull(col3)) {
-    		item.used_at = new Date(c.getLong(col3));
+    		item.favorited_at = new Date(c.getLong(col3));
     	}
     	if (close) {
     		c.close();
@@ -73,14 +73,14 @@ public class Item {
     public String getContent() {
         return content;
     }
-    public Boolean getUsed() {
-    	return used;
+    public Boolean getFavorited() {
+    	return favorited;
     }
-    public Date getUsedAt() {
-    	return used_at;
+    public Date getFavoritedAt() {
+    	return favorited_at;
     }
-    public String getUsedAtAsString() {
-    	return (used_at == null) ? "unknown" : used_at.toLocaleString();
+    public String getFavoritedAtAsString() {
+    	return (favorited_at == null) ? "unknown" : favorited_at.toLocaleString();
     }
     public Integer getId() {
     	return id;

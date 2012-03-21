@@ -14,8 +14,8 @@
 			style="@style/TextViewAccessNumber"
 			android:id="@+id/content"/>
 		<TextView
-			style="@style/TextViewUsedAt"
-			android:id="@+id/used_at"/>
+			style="@style/TextViewFavoritedAt"
+			android:id="@+id/favorited_at"/>
 		</LinearLayout>
 		<LinearLayout
 			style="@style/UndoContainer"

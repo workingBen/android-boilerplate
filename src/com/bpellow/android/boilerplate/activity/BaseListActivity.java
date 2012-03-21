@@ -58,7 +58,7 @@ abstract class BaseListActivity extends BaseActivity {
                 super(context, textViewResourceId, items);
                 this.items = items;
                 itemsShowing = items.size();
-                itemsTotal = dbAdapter.totalUsedHistoryCount();
+                itemsTotal = dbAdapter.totalFavoritedHistoryCount();
                 refreshSubtitle();
         }
         @Override
@@ -71,11 +71,11 @@ abstract class BaseListActivity extends BaseActivity {
                 Item item = items.get(position);
                 if (item != null) {
                         TextView c = (TextView) v.findViewById(R.id.content);
-                        TextView ua = (TextView) v.findViewById(R.id.used_at);
+                        TextView ua = (TextView) v.findViewById(R.id.favorited_at);
                         TextView undo = (TextView) v.findViewById(R.id.undo);
                         
                         if (c != null) { c.setText("#"+item.getContent()); }
-                        if (ua != null) { ua.setText("Added: "+ item.getUsedAtAsString()); }
+                        if (ua != null) { ua.setText("Added: "+ item.getFavoritedAtAsString()); }
                         if (undo != null) { 
                         	undo.setTag(String.valueOf(position));
                         	undo.setContentDescription(item.getContent());

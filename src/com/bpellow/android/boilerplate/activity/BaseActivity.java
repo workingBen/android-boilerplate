@@ -187,12 +187,12 @@ public class BaseActivity extends Activity {
             	public void onClick(DialogInterface dialog, int whichButton) {
             		dialog.dismiss();
             		self.showDialog(DIALOG_SYNC_UP);
-        	    	syncUsedItemsToServer();
+        	    	syncFavoritedItemsToServer();
         	    	self.dismissDialog(DIALOG_SYNC_UP);
         	    	if (logoutAndDeleteDatabase()) {
         	    		// just logged out and deleted database
         	    	} else {
-        	    		syncUsedItemsToServer();
+        	    		syncFavoritedItemsToServer();
         	    		if (logoutAndDeleteDatabase()) {
         	    			// just logged out and deleted database
         	    		} else {
@@ -277,7 +277,7 @@ public class BaseActivity extends Activity {
  	}
 	
 	public boolean isFullySynced() {
-		return (ApiProxyStub.getUsedItemCount(Preferences.getToken(self), null) == dbAdapter.usedItemCount());
+		return (ApiProxyStub.getFavoritedItemCount(Preferences.getToken(self), null) == dbAdapter.favoritedItemCount());
 	}
 	
 	public void goToActivity(final Class goToClass) {
@@ -342,8 +342,8 @@ public class BaseActivity extends Activity {
 	}
 	
 	/* DBADAPTER METHODS */
-    public void syncUsedItemsToServer() {
-    	ArrayList<Item> items_to_update = dbAdapter.fetchAllUsedItems();
+    public void syncFavoritedItemsToServer() {
+    	ArrayList<Item> items_to_update = dbAdapter.fetchAllFavoritedItems();
     	syncItemsToServer(items_to_update);
     }
     
@@ -417,9 +417,9 @@ public class BaseActivity extends Activity {
     				Item item = items.get(i);
     				if (dbAdapter.itemExists(item.getId())) {
     					Log.v("FetchItems", "exists");
-    					Boolean used = item.getUsed();
-    					if (used != null && used == true) { // only update items if they are used, don't unuse a item from the server -- TODO: revisit this logic, should server be able to push down unused items to overwrite used ones? not yet.
-    						dbAdapter.updateItem(item, used); 
+    					Boolean favorited = item.getFavorited();
+    					if (favorited != null && favorited == true) { // only update items if they are favorited, don't unuse a item from the server -- TODO: revisit this logic, should server be able to push down unfavorited items to overwrite favorited ones? not yet.
+    						dbAdapter.updateItem(item, favorited); 
     					}
     				} else {
     					Log.v("FetchItems", "insert");
